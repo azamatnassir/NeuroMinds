@@ -1,16 +1,19 @@
-let navOpened = false;
-
 function openNav() {
-    document.getElementById("sidenav").style.width = "250px";
-    // document.getElementsByClassName("container")[0].style.backgroundColor = "rgba(0, 0, 0, 0.57)";
-    navOpened = true;
+    if (window.innerWidth < 768) {
+        document.getElementById("sidenav").style.width = "250px";
+        document.getElementById("sidenav").style.height = "250px";
+    } else {
+        document.getElementById("sidenav").style.width = "250px";
+    }
 }
 
 function closeNav() {
-    document.getElementById("sidenav").style.width = "0";
-    // document.getElementsByClassName("container")[0].style.backgroundColor = "rgb(255, 255, 255)";
-    // document.getElementById("menuBar").classList.toggle("change");
-    navOpened = false;
+    if (window.innerWidth < 768) {
+        document.getElementById("sidenav").style.width = "0";
+        document.getElementById("sidenav").style.height = "0";
+    } else {
+        document.getElementById("sidenav").style.width = "0";
+    }
 }
 
 function menuChange() {

@@ -32,8 +32,12 @@ header {
     top: 0;
     padding: 1rem 4rem;
     z-index: 1;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0);
     border-radius: 25px;
+}
+
+.form-header {
+    background-color: #fff;
 }
 
 header img {
@@ -82,6 +86,7 @@ nav a:hover {
     right: 0;
     overflow-x: hidden;
     padding-top: 60px;
+    border-radius: 15px 15px 0 15px;
     transition: 0.5s ease-in-out;
     background: rgba(226, 247, 245, 0.5);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -117,6 +122,10 @@ main {
     padding-top: 4rem;
     position: relative;
     overflow: hidden;
+}
+
+.form-main {
+    overflow: auto;
 }
 
 .cover {
@@ -173,7 +182,7 @@ main {
     width: auto;
     top: 50%;
     right: 5%;
-    z-index: 2;
+    z-index: 1;
     transform: translateY(-50%);
     position: absolute;
 }
@@ -184,7 +193,7 @@ main {
     width: 45vw;
     top: 50%;
     right: -10%;
-    z-index: 1;
+    z-index: 0;
     transform: translateY(-40%);
     position: absolute;
     border-radius: 50%;
@@ -202,7 +211,6 @@ main {
     padding: 10px 40px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     gap: 10px;
     border-right: 1px solid #006b9c;
 }
@@ -227,12 +235,93 @@ main {
     border: 1px solid #00000069;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 756px) {
+
+    header {
+        height: 2.5rem;
+        padding: 2rem 1.5rem;
+        border-bottom: 1px solid #006b9c;
+        border-radius: 0;
+    }
+
+    header img {
+        height: 2rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .cover {
+        height: 400px;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .cover h1 {
+        font-size: 8vw;
+        z-index: 2;
+    }
+
+    .cover p {
+        font-size: 5vw;
+        font-weight: 300;
+    }
+
+    .cover img {
+        height: 60vw;
+        width: auto;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #circle {
+        height: 85vw;
+        width: 85vw;
+        top: 25%;
+        right: -15%;
+    }
+
     .sidenav {
-        padding-top: 15px;
+        height: 0;
+        padding-top: 35px;
     }
 
     .sidenav a {
-        font-size: 18px;
+        font-size: 24px;
+    }
+
+    .form-container {
+        border-top: none;
+    }
+
+    .request-form {
+        padding: 10px 15px;
+        width: 100%;
+        gap: 10px;
+        border: none;
+    }
+
+    .request-form .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #00334B;
+        gap: 5px;
+    }
+
+    .request-form input {
+        padding: 10px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #00334B;
+        border-radius: 15px;
+        border: 1px solid #00000069;
     }
 }
