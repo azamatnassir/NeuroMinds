@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+header {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 1rem 4rem;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+}
+
+header img {
+    margin: 0;
+    height: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+nav {
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: aliceblue;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #00334B;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 7px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -7px) rotate(45deg);
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s ease-in-out;
+    background: rgba(226, 247, 245, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(226, 247, 245, 0.3);
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: #00334B;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #006b9c;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+main {
+    height: 100%;
+    padding-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cover {
+    height: 100%;
+    width: 50%;
+    padding-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.cover h1 {
+    color: #00334B;
+    font-size: 3vw;
+    margin: 0;
+}
+
+.cover p {
+    color: #01344B;
+    font-size: 2vw;
+    font-weight: 200;
+}
+
+.pushable {
+    background: hsl(195, 80%, 25%);
+    border-radius: 15px;
+    font-size: 1.1vw;
+    font-weight: 700;
+    border: none;
+    margin-top: 5px;
+    padding: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.front {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    background: hsl(190, 80%, 32%);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
+.cover img {
+    height: 30vw;
+    width: auto;
+    top: 50%;
+    right: 5%;
+    z-index: 2;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+#circle {
+    background-color: #E2F7F5;
+    height: 45vw;
+    width: 45vw;
+    top: 50%;
+    right: -10%;
+    z-index: 1;
+    transform: translateY(-40%);
+    position: absolute;
+    border-radius: 50%;
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #006b9c;
+}
+
+.request-form {
+    height: 100%;
+    width: 30%;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 10px;
+    border-right: 1px solid #006b9c;
+}
+
+.request-form .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #00334B;
+    gap: 5px;
+}
+
+.request-form input {
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9vw;
+    font-weight: 500;
+    color: #00334B;
+    border-radius: 15px;
+    border: 1px solid #00000069;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

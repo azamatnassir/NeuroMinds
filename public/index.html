@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroMinds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img class="logo" src="images/logo.png" alt="logo" onclick="location.href='/'">
+
+            <nav>
+                <div id="menuBar" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">О нас</a>
+            <a href="#">Контакты</a>
+        </div>
+
+        <main onclick="closeNav()">
+            <div class="cover">
+                <h1>
+                    Создавайте эффективные и адаптированные поурочные планы за считанные минуты.
+                </h1>
+                <p>
+                    С нашей платформой преподаватели могут сосредоточиться на главном — обучении студентов, а рутину
+                    оставьте нейросети.
+                </p>
+                <button id="startBtn" class="pushable" onclick="location.href='/start'">
+                    <span class="front">Начать работу</span>
+                </button>
+                <img src="images/neuro.png" alt="neuro">
+                <span id="circle"></span>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
