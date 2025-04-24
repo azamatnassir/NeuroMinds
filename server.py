@@ -12,7 +12,7 @@ def chat():
     user_message = request.json.get("message", "")
 
     payload = {
-        "model": "mistral",  # или "openchat", "llama3"
+        "model": "llama3",  # или "openchat", "llama3"
         "messages": [
             {"role": "system", "content": "Ты — дружелюбный помощник преподавателя."},
             {"role": "user", "content": user_message}
