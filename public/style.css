@@ -240,6 +240,9 @@ main {
     header {
         height: 2.5rem;
         padding: 2rem 1.5rem;
+    }
+
+    .form-header {
         border-bottom: 1px solid #006b9c;
         border-radius: 0;
     }
