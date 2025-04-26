@@ -6,7 +6,7 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 API_URL = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer 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"}
 
 def query_llm(prompt):
     payload = {
