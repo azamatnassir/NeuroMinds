@@ -3,21 +3,22 @@
 * {
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
-    -webkit-user-drag: none;
+    /* -webkit-user-drag: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: none; */
 }
 
 html,
 body {
     height: 100%;
+    width: 100%;
     margin: 0;
 }
 
 .container {
-    height: 100%;
+    height: 100dvh;
     width: 100%;
     background-color: white;
 }
@@ -33,11 +34,12 @@ header {
     padding: 1rem 4rem;
     z-index: 1;
     background: rgba(255, 255, 255, 0);
-    border-radius: 25px;
 }
 
 .form-header {
+    position: sticky;
     background-color: #fff;
+    border-bottom: 1px solid #006b9c;
 }
 
 header img {
@@ -119,13 +121,15 @@ nav a:hover {
 
 main {
     height: 100%;
+    width: 100%;
     padding-top: 4rem;
     position: relative;
     overflow: hidden;
 }
 
 .form-main {
-    overflow: auto;
+    padding-top: 0;
+    overflow: visible;
 }
 
 .cover {
@@ -148,6 +152,12 @@ main {
     color: #01344B;
     font-size: 2vw;
     font-weight: 200;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .pushable {
@@ -177,6 +187,17 @@ main {
     transform: translateY(-2px);
 }
 
+#telegramBtn {
+    background: hsl(174, 57%, 78%);
+}
+
+#telegramBtn .front {
+    color: hsl(183, 51%, 45%);
+    /* background: hsl(0, 0%, 91%); */
+    background: hsl(174, 57%, 88%);
+    /* background: hsl(183, 51%, 50%); */
+}
+
 .cover img {
     height: 30vw;
     width: auto;
@@ -202,12 +223,14 @@ main {
 .form-container {
     width: 100%;
     height: 100%;
-    border-top: 1px solid #006b9c;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
 }
 
 .request-form {
     height: 100%;
-    width: 30%;
+    width: 40%;
     padding: 10px 40px;
     display: flex;
     flex-direction: column;
@@ -225,7 +248,8 @@ main {
     gap: 5px;
 }
 
-.request-form input {
+.request-form input,
+.request-form textarea {
     padding: 10px;
     font-family: 'Inter', sans-serif;
     font-size: 0.9vw;
@@ -233,18 +257,78 @@ main {
     color: #00334B;
     border-radius: 15px;
     border: 1px solid #00000069;
+    resize: none;
+}
+
+#preview-container {
+    height: 100%;
+    width: 70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#preview-container button {
+    margin: 1rem;
+}
+
+.preview-img {
+    height: 90%;
+    width: fit-content;
+    border: 1px solid #ccc;
+    cursor: zoom-in;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    display: none;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 756px) {
 
+    .pushable {
+        font-size: 0.95vw;
+    }
+
+    .front {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
     header {
         height: 2.5rem;
         padding: 2rem 1.5rem;
-    }
-
-    .form-header {
-        border-bottom: 1px solid #006b9c;
-        border-radius: 0;
     }
 
     header img {
@@ -258,13 +342,14 @@ main {
     }
 
     .cover {
-        height: 400px;
+        height: fit-content;
         width: 100%;
-        padding: 0 1rem;
+        padding: 1rem 1rem;
     }
 
     .cover h1 {
-        font-size: 8vw;
+        width: 90%;
+        font-size: 7.2vw;
         z-index: 2;
     }
 
@@ -282,10 +367,10 @@ main {
     }
 
     #circle {
-        height: 85vw;
-        width: 85vw;
+        height: 90vw;
+        width: 90vw;
         top: 25%;
-        right: -15%;
+        right: -20%;
     }
 
     .sidenav {
@@ -299,10 +384,13 @@ main {
 
     .form-container {
         border-top: none;
+        flex-direction: column;
     }
 
     .request-form {
         padding: 10px 15px;
+        height: fit-content;
+        border: 1px solid red;
         width: 100%;
         gap: 10px;
         border: none;
@@ -312,7 +400,29 @@ main {
         font-size: 1rem;
     }
 
-    .request-form input {
+    .request-form input,
+    .request-form textarea {
         font-size: 1rem;
+    }
+
+    #preview-container {
+        display: none;
+        height: 90vh;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #preview-container button {
+        margin: 1rem;
+    }
+
+    .preview-img {
+        height: auto;
+        width: 95%;
+        border: 1px solid #ccc;
     }
 }

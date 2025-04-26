@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuroMinds</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
@@ -38,9 +39,15 @@
                     С нашей платформой преподаватели могут сосредоточиться на главном — обучении студентов, а рутину
                     оставьте нейросети.
                 </p>
-                <button id="startBtn" class="pushable" onclick="location.href='/start'">
-                    <span class="front">Начать работу</span>
-                </button>
+                <div class="buttons">
+                    <button id="startBtn" class="pushable" onclick="location.href='/start'">
+                        <span class="front">Стандартный <br> план</span>
+                    </button>
+                    <button id="telegramBtn" class="pushable"
+                        onclick="window.open('https://t.me/inclusive_enu_bot', '_blank')">
+                        <span class="front">Адаптивный план <br> для учеников с ООП</span>
+                    </button>
+                </div>
                 <img src="images/neuro.png" alt="neuro">
                 <span id="circle"></span>
             </div>

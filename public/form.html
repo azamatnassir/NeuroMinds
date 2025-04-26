@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form plan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="public/images/favicon.png">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                 <form class="request-form" action="">
                     <div class="form-group">
                         <label for="topic">Тема занятия</label>
-                        <input type="text" id="topic" name="topic">
+                        <textarea type="text" id="topic" name="topic" rows="2"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -65,13 +66,19 @@
 
                     <div class="form-group">
                         <label for="activities">Предпочитаемые виды деятельности</label>
-                        <input type="text" id="activities" name="activities">
+                        <textarea type="text" id="activities" name="activities"></textarea>
                     </div>
 
                     <button id="startBtn" type="submit" class="pushable">
-                        <span class="front">Отправить</span>
+                        <span class="front" id="generate">Сгенерировать план</span>
                     </button>
+                    <br>
                 </form>
+                <div id="preview-container"></div>
+                <div id="modal" class="modal">
+                    <span id="close">&times;</span>
+                    <img class="modal-content" id="modalImage">
+                </div>
             </div>
         </main>
 
